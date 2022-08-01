@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar/>
     <div class="m-8">
      <h6>Please choose items to your bucket</h6>
      <div class="flex flex-row ">
