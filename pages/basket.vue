@@ -28,7 +28,7 @@
       <div>
         <h4>Basket stack</h4>
       </div>
-      <div>Apple</div>
+      <div>{{basket}}</div>
     </div>
   </div>
 </template>
@@ -49,22 +49,27 @@ export default {
   methods:{
     add(){
       this.counter = this.counter === 10 ? 10 : this.counter + 1;
-      this.basket="Apple"
+      this.basket.push("Apple")
     },
     remove(){
-     this.counter = this.counter === 1 ? 1 : this.counter - 1;
+     this.counter = this.counter === 0 ? 0 : this.counter - 1;
+     let basket=basket.slice(0,-1)
     },
     add1(){
       this.orangecounter = this.orangecounter === 10 ? 10 : this.orangecounter + 1;
+      this.basket.push("Orange")
     },
     remove1(){
-     this.orangecounter = this.orangecounter === 1 ? 1 : this.orangecounter - 1;
+     this.orangecounter = this.orangecounter === 0 ? 0 : this.orangecounter - 1;
+     basket.splice(-1)
     },
     add2(){
       this.grapecounter = this.grapecounter === 10 ? 10 : this.grapecounter + 1;
+      this.basket.push("Grape")
     },
     remove2(){
-     this.grapecounter = this.grapecounter === 1 ? 1 : this.grapecounter - 1;
+     this.grapecounter = this.grapecounter === 0 ? 0 : this.grapecounter - 1;
+     let basket=basket.splice(-1)
     },
   }
 
