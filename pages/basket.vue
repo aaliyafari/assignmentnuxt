@@ -28,7 +28,7 @@
       <div>
         <h4>Basket stack</h4>
       </div>
-      <div>{{counter}}</div>
+      <div>Apple</div>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
   methods:{
     add(){
       this.counter = this.counter === 10 ? 10 : this.counter + 1;
-      this.basket=this.counter
+      this.basket="Apple"
     },
     remove(){
      this.counter = this.counter === 1 ? 1 : this.counter - 1;
