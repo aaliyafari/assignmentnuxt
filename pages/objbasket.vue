@@ -25,22 +25,28 @@
      </div>
     </div>
     <div class="m-8">
-      <div>
+      <div class="mx-32">
         <h4>Basket stack</h4>
       </div>
-      <div>{{basket.join(",")}}</div><br/>
+     <table class="w-64 mx-20 items-cener justify-center"><tr class="border-solid border-2 border-indigo-600 w-10" v-for="(basket, index) in basket" :key="index">
+    <td >{{basket}}</td>
+</tr></table>
     </div>
   </div>
 </template>
 
-<script>    
+<script>  
+import login from './login.vue';  
+
 export default {
+    name:login,
+    
    data(){
     return{
       "apple":{
         name:"Apple",
         count:10,
-        color:""
+        color:"#FF0000"
       },
       "orange":{
         name:"Orange",
@@ -53,7 +59,6 @@ export default {
         color:""
       },
       basket:[]
-
     }
   },
   
@@ -64,7 +69,7 @@ export default {
       this.basket.push(this.apple.name)
         }
            else{
-           alert("There are no elements")
+           alert("Sorry!You ran out of Apples")
            } 
         },
     remove(){
@@ -100,7 +105,7 @@ export default {
       this.basket.push(this.grapes.name)
         }
         else{
-            alert("There are No Enough Oranges")
+            alert("There are No Enough grapes left")
         }
     },
     remove2(){

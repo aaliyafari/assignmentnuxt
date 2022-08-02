@@ -13,10 +13,16 @@
 <script>
 import axios from "axios"
 export default {
+    props:{
+        name:String,
+       password:String,
+       permission:String
+    },
 data(){
     return{
      name:'',
-     password:''
+     password:'',
+     permission:''
     }
 },
 methods:{
@@ -26,7 +32,7 @@ methods:{
             
         );
         if(result.status==200 && result.data.length>0){
-            this.$router.push({name:"objbasket"})
+            this.$router.push({name:"objbasket",props:true})
             
         }
         else{
