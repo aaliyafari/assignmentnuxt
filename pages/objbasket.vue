@@ -4,19 +4,19 @@
     <div class="m-8">
      <h6>Please choose items to your bucket</h6>
      <div class="flex flex-row ">
-      <div class="basis-1/4 bg-red-400">
+      <div class="basis-1/4 apple">
         <div>{{apple.name}}</div>
         <div>{{apple.count}}</div>
         <div><button v-on:click="add" >+</button><button v-on:click="remove">-</button></div>
 
       </div>
-      <div class="basis-1/4 bg-orange-500">
+      <div class="basis-1/4 orange">
         <div>{{orange.name}}</div>
         <div>{{orange.count}}</div>
         <div><button v-on:click="add1">+</button><button v-on:click="remove1">-</button></div>
 
       </div>
-      <div class="basis-1/4 bg-blue-200">
+      <div class="basis-1/4 grapes">
         <div >{{grapes.name}}</div>
         <div>{{grapes.count}}</div>
         <div><button v-on:click="add2" class="rounded-full">+</button><button v-on:click="remove2">-</button></div>
@@ -28,17 +28,18 @@
       <div class="mx-32">
         <h4>Basket stack</h4>
       </div>
-     <table class="w-64 mx-20 items-cener justify-center"><tr class="border-solid border-2 border-indigo-600 w-10" v-for="(basket, index) in basket" :key="index">
-    <td >{{basket}}</td>
+     <table class="w-64 mx-20 items-cener justify-center"><tr class="border-solid border-2 border-indigo-600 w-10" v-for="(basket, index) in basket.slice().reverse()" :key="index">
+    <td :class="classe[basket]">{{basket}}</td>
 </tr></table>
     </div>
   </div>
 </template>
 
 <script>  
-import login from './login.vue';  
 
+import login from './login.vue';  
 export default {
+    
     name:login,
     
    data(){
@@ -58,7 +59,12 @@ export default {
         count:10,
         color:""
       },
-      basket:[]
+      basket:[],
+      classe:{
+        "Apple":'apple',
+        'Orange':"orange",
+        "Grapes":"grapes"
+    }
     }
   },
   
@@ -123,6 +129,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.apple{
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+}
+.grapes{
+    background-color: blue;
+}
 </style>
