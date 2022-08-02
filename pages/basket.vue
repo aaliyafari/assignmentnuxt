@@ -34,42 +34,44 @@
 </template>
 
 <script>
-import { remove } from '@vue/shared';
+let apple="Apple"
+let orange="Orange"
+let grapes="Grapes"
 
 export default {
    data(){
     return{
-      counter:0,
-      orangecounter:0,
-      grapecounter:0,
+      counter:10,
+      orangecounter:10,
+      grapecounter:10,
       basket:[]
 
     }
   },
   methods:{
     add(){
-      this.counter = this.counter === 10 ? 10 : this.counter + 1;
-      this.basket.push("Apple")
+      this.counter = this.counter === 0 ? 0 : this.counter - 1;
+      this.basket.push(apple)
     },
     remove(){
-     this.counter = this.counter === 0 ? 0 : this.counter - 1;
-     let basket=basket.slice(0,-1)
+     this.counter = this.counter === 10 ? 10 : this.counter + 1;
+     this.basket.pop()
     },
     add1(){
-      this.orangecounter = this.orangecounter === 10 ? 10 : this.orangecounter + 1;
-      this.basket.push("Orange")
+      this.orangecounter = this.orangecounter === 0 ? 0 : this.orangecounter - 1;
+      this.basket.push(orange)
     },
     remove1(){
-     this.orangecounter = this.orangecounter === 0 ? 0 : this.orangecounter - 1;
-     basket.splice(-1)
+     this.orangecounter = this.orangecounter === 10 ? 10 : this.orangecounter + 1;
+     this.basket.pop()
     },
     add2(){
-      this.grapecounter = this.grapecounter === 10 ? 10 : this.grapecounter + 1;
-      this.basket.push("Grape")
+      this.grapecounter = this.grapecounter === 0 ? 0 : this.grapecounter - 1;
+      this.basket.push(grapes)
     },
     remove2(){
-     this.grapecounter = this.grapecounter === 0 ? 0 : this.grapecounter - 1;
-     let basket=basket.splice(-1)
+     this.grapecounter = this.grapecounter === 10 ? 10 : this.grapecounter + 1;
+     this.basket.pop()
     },
   }
 
