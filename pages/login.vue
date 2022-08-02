@@ -25,7 +25,6 @@ methods:{
             `http://localhost:8000/users?name=${this.name}&password=${this.password}`
             
         );
-        // console.warn(result)
         if(result.status==200 && result.data.length>0){
             this.$router.push({name:"objbasket"})
             

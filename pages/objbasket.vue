@@ -33,7 +33,7 @@
   </div>
 </template>
 
-<script>
+<script>    
 export default {
    data(){
     return{
@@ -59,9 +59,14 @@ export default {
   
   methods:{
     add(){
+        if(this.apple.count>0){
       this.apple.count = this.apple.count === 0 ? 0 : this.apple.count - 1;
       this.basket.push(this.apple.name)
-    },
+        }
+           else{
+           alert("There are no elements")
+           } 
+        },
     remove(){
         if(this.basket.at(-1)==this.apple.name){
      this.apple.count = this.apple.count === 10 ? 10 : this.apple.count + 1;
@@ -72,8 +77,13 @@ export default {
         }
     },
     add1(){
+        if(this.orange.count>0){
       this.orange.count = this.orange.count === 0 ? 0 : this.orange.count - 1;
       this.basket.push(this.orange.name)
+        }
+        else{
+            alert("There are No Enough Oranges in cart")
+        }
     },
     remove1(){
         if(this.basket.at(-1)==this.orange.name){
@@ -85,8 +95,13 @@ export default {
         }
     },
     add2(){
+        if(this.grapes.count>0){
       this.grapes.count = this.grapes.count === 0 ? 0 : this.grapes.count - 1;
       this.basket.push(this.grapes.name)
+        }
+        else{
+            alert("There are No Enough Oranges")
+        }
     },
     remove2(){
          console.warn(this.basket.at(-1))

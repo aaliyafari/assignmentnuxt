@@ -50,8 +50,13 @@ export default {
   },
   methods:{
     add(){
-      this.counter = this.counter === 0 ? 0 : this.counter - 1;
+      this.applcounter = this.counter === 0 ? 0 : this.counter - 1;
+      if(counter>0){
       this.basket.push(apple)
+      }
+      else{
+        alert("You have No Items left")
+      }
     },
     remove(){
      this.counter = this.counter === 10 ? 10 : this.counter + 1;
