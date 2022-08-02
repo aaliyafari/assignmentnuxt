@@ -3,11 +3,13 @@
             {
             "name":"admin",
             "password":"admin",
+            "permission":"all",
             "id":"1"
             },
                 {
                 "name":"Myname",
                 "password":"test",
+                "permission":"none",
                 "id":"2"
                 }
         

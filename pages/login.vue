@@ -27,7 +27,7 @@ methods:{
         );
         // console.warn(result)
         if(result.status==200 && result.data.length>0){
-            this.$router.push({name:"basket"})
+            this.$router.push({name:"objbasket"})
             
         }
         else{

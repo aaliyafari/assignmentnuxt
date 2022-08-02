@@ -28,13 +28,12 @@
       <div>
         <h4>Basket stack</h4>
       </div>
-      <div>{{basket}}</div>
+      <div>{{basket.join(",")}}</div><br/>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
    data(){
     return{
@@ -57,6 +56,7 @@ export default {
 
     }
   },
+  
   methods:{
     add(){
       this.apple.count = this.apple.count === 0 ? 0 : this.apple.count - 1;
