@@ -7,19 +7,19 @@
       <div class="basis-1/4 apple">
         <div>{{apple.name}}</div>
         <div>{{apple.count}}</div>
-        <div><button v-on:click="add" >+</button><button v-on:click="remove">-</button></div>
+        <div ><button @click="per? add() : al()">+</button><button @click="per? remove() : al()">-</button></div>
 
       </div>
       <div class="basis-1/4 orange">
         <div>{{orange.name}}</div>
         <div>{{orange.count}}</div>
-        <div><button v-on:click="add1">+</button><button v-on:click="remove1">-</button></div>
+        <div><button @click="per? add1() : al()">+</button><button @click="per? remove1() : al2()">-</button></div>
 
       </div>
       <div class="basis-1/4 grapes">
         <div >{{grapes.name}}</div>
         <div>{{grapes.count}}</div>
-        <div><button v-on:click="add2" class="rounded-full">+</button><button v-on:click="remove2">-</button></div>
+        <div><button @click="per? add2() : al()" class="rounded-full">+</button><button @click="per? remove2() : al2()">-</button></div>
 
       </div>
      </div>
@@ -64,11 +64,24 @@ export default {
         "Apple":'apple',
         'Orange':"orange",
         "Grapes":"grapes"
+    },
+    per:false,
     }
-    }
+    
   },
-  
+  created(){
+  this.per=this.$route.params.per;
+  if(this.per==="all"){
+  this.per=true;
+  }
+  else{
+    this.per=false
+  }
+  console.warn(this.per)
+
+  },
   methods:{
+ 
     add(){
         if(this.apple.count>0){
       this.apple.count = this.apple.count === 0 ? 0 : this.apple.count - 1;
@@ -123,6 +136,9 @@ export default {
          else{
             alert("You have selected invalid item ")
          }
+    },
+    al(){
+        alert("Sorry!You dont have access")
     },
   }
 
