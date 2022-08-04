@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <div class="border border-indigo-600 m-8">
-        <div class="justify-items-center"><h1>Login</h1></div>
-        <div><input type="text" placeholder="username" v-model="name"/>
+<center>
+    <div class="border border-black-600 mt-48 center w-80 bg-slate-200">
+        <div class="center m-2"><h1>Login</h1></div>
+        <div class="mx-4"><input type="text" class="bg-slate-200 pl-2"  placeholder="username" v-model="name"/>
         </div><br/>
-        <div><input type="password"  placeholder="password" v-model="password"/></div><br/>
-        <div><button @click="login">Submit</button></div>
+        <div class="mx-4"><input type="password" class="bg-slate-200 pl-2"  placeholder="password" v-model="password"/></div><br/>
+        <div><button class="center bg-slate-400" @click="login">Submit</button></div>
   </div>
-  </div>
+</center>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ methods:{
         
          if(result.status==200 && result.data.length>0){
              per=result.data[0].permission
-            this.$router.push({name:"objbasket",params:{per}})
+            this.$router.push({name:"basket",params:{per}})
             
         }
         else{
