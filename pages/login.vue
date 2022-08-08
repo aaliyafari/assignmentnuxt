@@ -29,7 +29,7 @@ methods:{
         );
         
          if(result.status==200 && result.data.length>0){
-             per=result.data[0].permission
+            per=result.data[0].permission
             this.$router.push({name:"basket",params:{per}})
             
         }
