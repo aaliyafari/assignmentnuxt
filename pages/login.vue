@@ -34,7 +34,7 @@ methods:{
             
         }
         else{
-            alert("Enter the valid credential")
+            alert("Enter the valid credentials")
         }
         console.warn(per)
     }
